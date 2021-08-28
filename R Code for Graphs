@@ -1,0 +1,32 @@
+#Graph 1 - Figure 4
+#table created to isolate variable for bar plot
+c3<- table(data$VICTIM_COUNT, data$DATA_YEAR)
+
+#barplot code
+barplot(c3, main = "Victim Count by Year", 
+xlab = "Year", ylab = "Victim Count", 
+col = "darkblue")
+
+#Graph 2 - Figure 5
+#Table created to isolate “victim_types” variable
+c1<-table(data$VICTIM_TYPES)
+
+#Parameters set for plot window to fit vertical x-axis labels
+par(mar=c(11,8,4,2))
+
+#barplot created for occurrence counts of victim types
+barplot(c1, main = "Entities Affected", 
+las = 2, 
+col = "darkgreen")
+
+#Graph 3 - Figure 6
+#Table created to isolate “Offender_Race” variable
+c2<-table(data$OFFENDER_RACE)
+
+#Parameters set for plot window to fit vertical x-axis labels
+par(mar=c(17,8,4,2))
+
+#barplot created for occurrence counts of victim types
+barplot(c2, main = "Offender Type", 
+las = 2, 
+col = "darkred")
