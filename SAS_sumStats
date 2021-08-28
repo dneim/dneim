@@ -1,0 +1,35 @@
+#Create Title
+title1 ' Summary Statistics ';
+
+#Create Subtitle
+title2 ' Victim Count by Region';
+
+#Proc means syntax to generate summary statisitcs VICTIM_COUNT against PUB_AGENCY_UNIT
+proc means data=WORK.IMPORT1 chartype mean std min max n vardef=df;
+	var VICTIM_COUNT;
+	class PUB_AGENCY_UNIT;
+run;
+
+#Create Title
+title1 ' Summary Statistics ';
+
+#Create Subtitle
+title2 ' Victim Count by Incident Location';
+
+#Proc means syntax to generate summary statisitcs VICTIM_COUNT against PUB_AGENCY_UNIT
+proc means data=WORK.IMPORT1 chartype mean std min max n vardef=df;
+	var VICTIM_COUNT;
+	class LOCATION_NAME;
+run;
+
+#Create Title
+title1 ' Summary Statistics ';
+
+#Create Subtitle
+title2 ' Victim Count by Bias Type';
+
+#Proc means syntax to generate summary statisitcs VICTIM_COUNT against PUB_AGENCY_UNIT
+proc means data=WORK.IMPORT1 chartype mean std min max n vardef=df;
+	var VICTIM_COUNT;
+	class BIAS_DESC;
+run;
