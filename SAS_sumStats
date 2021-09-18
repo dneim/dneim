@@ -1,3 +1,4 @@
+#Stats Table 1 - Figure 1
 #Create Title
 title1 ' Summary Statistics ';
 
@@ -10,6 +11,7 @@ proc means data=WORK.IMPORT1 chartype mean std min max n vardef=df;
 	class PUB_AGENCY_UNIT;
 run;
 
+#Stats Table 2 - Figure 2
 #Create Title
 title1 ' Summary Statistics ';
 
@@ -22,6 +24,7 @@ proc means data=WORK.IMPORT1 chartype mean std min max n vardef=df;
 	class LOCATION_NAME;
 run;
 
+#Stats Table 3 - Figure 3
 #Create Title
 title1 ' Summary Statistics ';
 
