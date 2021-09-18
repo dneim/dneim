@@ -1,0 +1,59 @@
+#List 1 - Figure 7
+#Create top 10 count of agencies with hgihest instances of hate crimes 
+
+SELECT 
+	agency_name,
+	COUNT(agency_name) AS agencies
+FROM ca_hate_crimes
+GROUP BY agency_name
+ORDER BY 2 DESC
+LIMIT 10
+
+
+#List 2 - Figure 8
+#Create list of top 10 bias types by occurance rate
+SELECT
+	bias_type,
+	COUNT(bias_type) num_of_inst
+FROM ca_hate_crimes
+GROUP BY bias_type
+ORDER BY 2 DESC
+LIMIT 10
+
+
+#List 3 - Figure 9
+#Create list of top 10 hate crime locations
+SELECT
+	location_name,
+	COUNT(location_name) num_of_inst
+FROM ca_hate_crimes
+GROUP BY location_name
+ORDER BY 2 DESC
+LIMIT 10
+
+
+#List 4 - Figure 10
+#Create top 10 list of offense type by occurance rate
+SELECT
+	offense_name,
+	COUNT(offense_name) num_of_inst
+FROM ca_hate_crimes
+GROUP BY offense_name
+ORDER BY 2 DESC
+LIMIT 10
+
+
+#List 5 - Figure 11
+#Create list of hate crime occurances by year for Asian ethnicity
+/*Group hate crime instances by year*/
+SELECT
+	data_year,
+	COUNT(*) AS "Number of Anti-Asian Hate Crimes"
+FROM
+/*Sub-query specifying hate crimes designated as Anti_Asian*/
+		(SELECT *
+		FROM ca_hate_crimes
+		WHERE bias_type LIKE 'Anti_Asian%') AS q1
+
+GROUP BY 1
+ORDER BY 1 DESC
